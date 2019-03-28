@@ -209,7 +209,3 @@ Unique Id,indicator_id,geo_type_id,measurement_type_id,internal_id,subtopic_id,n
 560897,1201,3,1,2381,11,Asthma Hospitalizations (Children 5 to 17 Yrs Old),Rate,UHF42,Neighborhood (UHF 42),502,Stapleton - St. George,2014,22.1,,
 560909,1201,3,1,2381,11,Asthma Hospitalizations (Children 5 to 17 Yrs Old),Rate,UHF42,Neighborhood (UHF 42),503,Willowbrook,2014,6.1,Estimate is based on small numbers so should be interpreted with caution.,
 560921,1201,3,1,2381,11,Asthma Hospitalizations (Children 5 to 17 Yrs Old),Rate,UHF42,Neighborhood (UHF 42),504,South Beach - Tottenville,2014,6.1,,
-
-NYC Department of Health and Mental Hygiene
-Environment & Health Data Portal
-Available at: http://nyc.gov/health/tracking Accessed 03/27/2019
