@@ -1,0 +1,36 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "https://github.com/grantpezeshki/Asthma_Infographic/blob/master/UHF42.topojson",
+    "format": {
+      "type": "topojson",
+      "feature": "id"
+    }
+  },
+  "transform": [
+    {
+      "lookup": "id",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/grantpezeshki/Asthma_Infographic/master/Asthma_Pivot.csv"
+        },
+        "key": "geo_entity_id",
+        "fields": [
+          "data_value_Asthma Emergency Department Visits (Children 5 to 17 Yrs Old)_Rate_2014"
+        ]
+      }
+    }
+  ],
+  "projection": {
+    "type": "mercator"
+  },
+  "mark": "geoshape",
+  "encoding": {
+    "color": {
+      "field": "data_value_Asthma Emergency Department Visits (Children 5 to 17 Yrs Old)_Rate_2014",
+      "type": "quantitative"
+    }
+  }
+}
