@@ -4,79 +4,65 @@
   "height": 500,
   "data": {
     "url": "https://raw.githubusercontent.com/grantpezeshki/Asthma_Infographic/master/UHF42.geojson",
-    "format": {
-      "property": "features"
-    }
+    "format": {"property": "features"}
   },
-  "transform": [
-    {
-      "lookup": "properties.GEOCODE",
-      "from": {
-        "data": {
-          "url": "https://raw.githubusercontent.com/grantpezeshki/Asthma_Infographic/master/Asthma_Pivot.csv"
-        },
-        "key": "geo_entity_id",
-        "fields": [
-          "geo_entity_name",
-          "geo_entity_id",
-          "data_value_Homes with Cracks or Holes_Percent of Households_2014",
-          "data_value_Homes with Leaks_Percent of Households_2014",
-          "data_value_Homes with Cockroaches_Percent_2014",
-          "data_value_Asthma Hospitalizations (Children 5 to 17 Yrs Old)_Rate_2014"
-        ]
-      }
+  "transform": [{"filter": {"selection": "pts"}},
+  {
+    "lookup": "properties.GEOCODE",
+    "from": {
+    "data": {"url": "https://raw.githubusercontent.com/grantpezeshki/Asthma_Infographic/master/Asthma_Pivot.csv"},
+    "key": "geo_entity_id",
+    "fields": ["geo_entity_name", "geo_entity_id","data_value_Homes with Cracks or Holes_Percent of Households_2014","data_value_Homes with Leaks_Percent of Households_2014", "data_value_Homes with Cockroaches_Percent_2014","data_value_Asthma Hospitalizations (Children 5 to 17 Yrs Old)_Rate_2014"]
     }
-  ],
-  "projection": {
-    "type": "mercator"
+  }
+],
+  "projection": {"type": "mercator"},
+  "selection": {
+    "pts": {"type": "single", "on": "dblclick"}
   },
   "mark": {
-    "type": "geoshape",
-    "stroke": "#212121",
-    "strokeWidth": 1
-  },
+        "type": "geoshape",
+        "stroke": "#212121",
+        "strokeWidth": 1
+      },
   "encoding": {
     "color": {
       "field": "data_value_Asthma Hospitalizations (Children 5 to 17 Yrs Old)_Rate_2014",
       "type": "quantitative",
-      "scale": {
-        "scheme": "Oranges"
-      },
-      "legend": {
-        "title": null,
-        "format": ""
-      }
-    },
+      "scale": {"scheme": "Oranges"},
+    "legend": {
+            "title": null,
+            "format": ""
+          }},
     "tooltip": [
-      {
-        "field": "properties.GEONAME",
-        "type": "nominal",
-        "title": "Name"
-      },
-      {
-        "field": "data_value_Homes with Cracks or Holes_Percent of Households_2014",
-        "type": "quantitative",
-        "format": "",
-        "title": "Cracks"
-      },
-      {
-        "field": "data_value_Homes with Leaks_Percent of Households_2014",
-        "type": "quantitative",
-        "format": "",
-        "title": "Leaks"
-      },
-      {
-        "field": "data_value_Homes with Cockroaches_Percent_2014",
-        "type": "quantitative",
-        "format": "",
-        "title": "Cockroaches"
-      },
-      {
-        "field": "data_value_Asthma Hospitalizations (Children 5 to 17 Yrs Old)_Rate_2014",
-        "type": "quantitative",
-        "format": "",
-        "title": "Asthma Hospitalizations"
-      }
-    ]
+          {"field": "properties.GEONAME", "type": "nominal", "title": "Name"},
+          {
+            "field": "data_value_Homes with Cracks or Holes_Percent of Households_2014",
+            "type": "quantitative",
+            "format": "",
+            "title": "Cracks"
+          },
+          {
+            "field": "data_value_Homes with Leaks_Percent of Households_2014",
+            "type": "quantitative",
+            "format": "",
+            "title": "Leaks"
+          },
+          {
+            "field": "data_value_Homes with Cockroaches_Percent_2014",
+            "type": "quantitative",
+            "format": "",
+            "title": "Cockroaches"
+          },
+          {
+            "field": "data_value_Asthma Hospitalizations (Children 5 to 17 Yrs Old)_Rate_2014",
+            "type": "quantitative",
+            "format": "",
+            "title": "Asthma Hospitalizations"
+          }
+        ]
   }
-}
+  }
+
+  
+
